@@ -211,6 +211,36 @@
         </div>
     </section>
 
+    <div class="whatsapp-floating-container">
+        <div class="whatsapp-popup" id="whatsapp-popup">
+            <div class="whatsapp-popup-header">
+                <div class="whatsapp-header-content">
+                    <img src="imagenes/nasly.png" alt="Nassly Ortiz" class="whatsapp-avatar">
+                    <div class="whatsapp-header-text">
+                        <strong>Psicóloga Nassly Ortiz</strong>
+                        <span>Comunícate con nosotros</span>
+                    </div>
+                </div>
+                <button class="whatsapp-close" id="whatsapp-close">&times;</button>
+            </div>
+            <div class="whatsapp-popup-body">
+                <a href="https://wa.me/573132670347?text=Hola,%20me%20gustaría%20dejar%20un%20mensaje%20desde%20la%20página%20web" class="whatsapp-message" target="_blank">
+                    <p>Deja tu mensaje aquí...</p>
+                    <div class="whatsapp-send-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <button class="whatsapp-float-btn" id="whatsapp-float-btn">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                <path d="M12.012 2c-5.508 0-9.987 4.479-9.987 9.987 0 1.763.459 3.421 1.258 4.864l-1.334 4.862 4.975-1.305c1.408.769 3.014 1.206 4.717 1.206 5.508 0 9.988-4.479 9.988-9.987 0-5.508-4.479-9.987-9.987-9.987zm4.551 14.129c-.218.614-1.282 1.151-1.782 1.207-.456.051-.832.222-2.82-.56-2.541-1-4.184-3.585-4.312-3.755-.126-.17-1.042-1.383-1.042-2.639 0-1.256.657-1.871.89-2.127.234-.256.512-.32.683-.32.17 0 .341.002.489.01.15.008.351-.057.551.428.204.493.7 1.705.761 1.833.061.128.102.277.017.447-.085.171-.128.277-.256.426-.128.15-.269.336-.384.45-.128.128-.261.269-.112.525.149.256.66 1.088 1.411 1.758.966.862 1.777 1.129 2.033 1.256.256.128.404.106.554-.064s.639-.745.81-.999c.17-.255.341-.213.575-.128.234.085 1.489.702 1.745.83.256.128.426.191.489.3.064.108.064.622-.154 1.235z"/>
+            </svg>
+        </button>
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2024 Psicóloga Nassly Ortiz. Todos los derechos reservados.</p>
@@ -254,6 +284,21 @@
                 menuBtn.classList.remove('active');
             });
         });
+
+        // WhatsApp Floating Button Logic
+        const waBtn = document.getElementById('whatsapp-float-btn');
+        const waPopup = document.getElementById('whatsapp-popup');
+        const waClose = document.getElementById('whatsapp-close');
+
+        if (waBtn && waPopup && waClose) {
+            waBtn.addEventListener('click', () => {
+                waPopup.classList.toggle('active');
+            });
+
+            waClose.addEventListener('click', () => {
+                waPopup.classList.remove('active');
+            });
+        }
     </script>
 </body>
 </html>
