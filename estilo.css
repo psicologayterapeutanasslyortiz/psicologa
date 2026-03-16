@@ -650,21 +650,15 @@ footer p {
 
 .whatsapp-message {
     background-color: white;
-    padding: 15px;
+    padding: 10px 15px;
     border-radius: 0 15px 15px 15px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     color: var(--text-dark);
-    text-decoration: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: 1;
-    transition: transform 0.2s ease;
-}
-
-.whatsapp-message:hover {
-    transform: translateY(-2px);
 }
 
 .whatsapp-message::before {
@@ -679,10 +673,18 @@ footer p {
     border-color: transparent white transparent transparent;
 }
 
-.whatsapp-message p {
+.whatsapp-input {
+    border: none;
+    outline: none;
+    width: 100%;
     font-size: 0.95rem;
-    margin: 0;
+    font-family: inherit;
+    background: transparent;
     color: var(--text-dark);
+}
+
+.whatsapp-input::placeholder {
+    color: var(--text-muted);
 }
 
 .whatsapp-send-icon {
@@ -695,6 +697,11 @@ footer p {
     justify-content: center;
     align-items: center;
     transition: background-color 0.2s ease;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: 10px;
+    padding: 0;
 }
 
 .whatsapp-message:hover .whatsapp-send-icon {
@@ -896,10 +903,6 @@ footer p {
         height: 25px;
     }
 
-    .whatsapp-popup {
-        width: 280px;
-    }
-}
     .whatsapp-popup {
         width: 280px;
     }
